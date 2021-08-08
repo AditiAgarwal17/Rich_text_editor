@@ -10,7 +10,7 @@
     
         <headerContent>
                 <Button text="Save" icon="sap-icon://save" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
-                <Button text="Cancel" icon="sap-icon://cancel" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
+                <Button text="Cancel" icon="sap-icon://cancel" type="Transparent" press=".onCancel" ariaLabelledBy="editButtonLabel"/>
 				
                     
         </headerContent>

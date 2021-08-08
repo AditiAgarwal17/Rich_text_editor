@@ -1,24 +1,22 @@
-sap.ui.define(['sap/ui/core/mvc/Controller'], function (Controller){
+sap.ui.define(['sap/ui/core/mvc/Controller',"sap/m/MessageToast","sap/m/MessageBox"], function (Controller,MessageToast,MessageBox){
 	"use strict";
 
 	return Controller.extend("sap.ui.richtexteditor.sample.RichTextEditor.controller.RichTextEditor", {
 		onInit: function() {
 			this.initRichTextEditor(false);
 		},
-		handleSelect: function (oEvent) {
-			var sSelectedKey = oEvent.getParameters().selectedItem.getKey();
-			if (this.oRichTextEditor) {
-				this.oRichTextEditor.destroy();
-			}
-			switch (sSelectedKey) {
-				case "TinyMCE5":
-					this.initRichTextEditor(true);
-					break;
-				default:
-					this.initRichTextEditor(false);
-					break;
-			}
+		onSave: function () {
+
+            MessageBox.success("Article Saved Successfully");
+        },
+		onCancel: function () {
+			MessageBox.warning("Cancel the changes made to the Article?", {
+				actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+				emphasizedAction: MessageBox.Action.YES,
+				
+			});
 		},
+		
 		initRichTextEditor: function (bIsTinyMCE5) {
 			var that = this,
 				sHtmlValue = '<p style="text-align: justify; background: white; font-size: 10pt; font-family: Calibri, sans-serif;"><strong><span style="font-size: 10.5pt; font-family: sans-serif; color: black;">Lorem ipsum dolor sit amet</span></strong>' +
