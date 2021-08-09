@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="sap.ui.richtexteditor.sample.RichTextEditor.controller.RichTextEditor"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Shell>
+    <App  class="myAppDemoWT" id="app" >
+    <Page >
+    
+        <headerContent>
+                <Button text="Save" icon="sap-icon://save" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
+                <Button text="Cancel" icon="sap-icon://cancel" type="Transparent" press=".onCancel" ariaLabelledBy="editButtonLabel"/>
+				
+                    
+        </headerContent>
+
+    <content>
+        <List>
+        <InputListItem label="Title">
+			<Input
+				placeholder="Article Title"/>
+		</InputListItem>
+        <InputListItem label="Content">
+		
+        </InputListItem>
+        </List>
+		<l:VerticalLayout id="idVerticalLayout" class="sapUiContentPadding" width="100%">
+		<HBox alignItems="Center">
+			
+			
+		</HBox>
+	</l:VerticalLayout>
+    </content>
+    </Page>
+        
+    </App>
+</Shell>
+	
+</mvc:View>
