@@ -21,7 +21,7 @@
 			<Input
 				placeholder="Article Title"/>
 		</InputListItem>
-        <InputListItem label="Content">
+        <InputListItem label="Content" >
 		
         </InputListItem>
         </List>
