@@ -20,12 +20,17 @@ function (Controller,MessageToast,MessageBox,aws,read){
 		
 		initRichTextEditor: function (bIsTinyMCE5) {
 			var that = this,
-				sHtmlValue = fetchOneByKey();
+				sHtmlValue = "";
+
+			fetchOneByKey().then(function (data) {
+				that.oRichTextEditor.mProperties.value=data.Content
+			});
+			
 				sap.ui.require(["sap/ui/richtexteditor/RichTextEditor"],
 				
 				function (RTE) {
 					that.oRichTextEditor = new RTE("myRTE", {
-						
+
 						width: "100%",
 						height: "600px",
 						customToolbar: true,
