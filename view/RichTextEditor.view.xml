@@ -9,19 +9,27 @@
     <Page >
     
         <headerContent>
-                <Button text="Save" icon="sap-icon://save" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
-                <Button text="Cancel" icon="sap-icon://cancel" type="Transparent" press=".onCancel" ariaLabelledBy="editButtonLabel"/>
+        <ComboBox id="selectCategory" change="onSelect" placeholder="Select a Category"
+				items="{
+					path: '/Categories',
+					sorter: { path: 'text' }
+				}">
+				<core:Item key="{key}" text="{text}" />
+			</ComboBox>
+                <Button text="{i18n>SaveButton}" icon="sap-icon://save" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
+                <Button text="{i18n>CancelButton}" icon="sap-icon://cancel" type="Transparent" press=".onCancel" ariaLabelledBy="editButtonLabel"/>
 				
                     
         </headerContent>
 
     <content>
         <List>
-        <InputListItem label="Title">
+        <InputListItem label="{i18n>Title}">
 			<Input
-				placeholder="Article Title"/>
+				placeholder="{i18n>ArticleTitle}"  id="title" value=""/>
+                
 		</InputListItem>
-        <InputListItem label="Content" >
+        <InputListItem label="{i18n>Content}" >
 		
         </InputListItem>
         </List>

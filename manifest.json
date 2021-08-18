@@ -1,9 +1,20 @@
 {
 	"sap.app": {
 		"id": "sap.ui.richtexteditor.sample.RichTextEditor",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
 			"version": "1.0.0"
-		}
+		},
+		"dataSources": {
+            "invoiceRemote": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -26,6 +37,17 @@
 					"manifest.json"
 				]
 			}
-		}
+		},
+		"models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.ui.richtexteditor.sample.RichTextEditor.i18n.i18n"
+                    
+                }
+               
+            }
+            
+        }
 	}
 }
