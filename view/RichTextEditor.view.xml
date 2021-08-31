@@ -3,26 +3,28 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt">
 	<Shell>
     <App  class="myAppDemoWT" id="app" >
     <Page >
-    
-        <headerContent>
-        <ComboBox id="selectCategory" change="onSelect" placeholder="Select a Category"
+    <tnt:ToolHeader>
+	 <Button text="{i18n>create}" icon="sap-icon://create" type="Transparent" press=".create" ariaLabelledBy="editButtonLabel"/>
+	<ToolbarSpacer />
+	
+		 <ComboBox id="selectCategory" change="onSelect" placeholder="{i18n>selectCategory} " 
 				items="{
 					path: '/Categories',
 					sorter: { path: 'text' }
+					
 				}">
 				<core:Item key="{key}" text="{text}" />
 			</ComboBox>
                 <Button text="{i18n>SaveButton}" icon="sap-icon://save" type="Transparent" press=".onSave" ariaLabelledBy="editButtonLabel"/>
                 <Button text="{i18n>CancelButton}" icon="sap-icon://cancel" type="Transparent" press=".onCancel" ariaLabelledBy="editButtonLabel"/>
-				
-                    
-        </headerContent>
+	</tnt:ToolHeader>
 
-    <content>
+    <content> 
         <List>
         <InputListItem label="{i18n>Title}">
 			<Input
@@ -30,7 +32,11 @@
                 
 		</InputListItem>
         <InputListItem label="{i18n>Content}" >
+		<Button text="{i18n>autosave}" icon="sap-icon://save" type="Transparent" press=".autosave" ariaLabelledBy="editButtonLabel" id="autosave" enabled="false"/>
+		<Button text="{i18n>delete}" icon="sap-icon://delete" type="Transparent" press=".delete" ariaLabelledBy="editButtonLabel" id="delete" enabled="false"/>
+		<Button text="Mail" icon="sap-icon://mail" type="Transparent" press=".sendMail" ariaLabelledBy="editButtonLabel" id="sendMail" enabled="true"/>
 		
+		<Button text="Export as PDF" icon="sap-icon://pdf" type="Transparent" press=".pdf" ariaLabelledBy="editButtonLabel" id="pdf" enabled="true"/>
         </InputListItem>
         </List>
 		<l:VerticalLayout id="idVerticalLayout" class="sapUiContentPadding" width="100%">
@@ -38,6 +44,7 @@
 			
 			
 		</HBox>
+		
 	</l:VerticalLayout>
     </content>
     </Page>
@@ -46,3 +53,5 @@
 </Shell>
 	
 </mvc:View>
+
+
