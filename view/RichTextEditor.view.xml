@@ -34,9 +34,9 @@
         <InputListItem label="{i18n>Content}" >
 		<Button text="{i18n>autosave}" icon="sap-icon://save" type="Transparent" press=".autosave" ariaLabelledBy="editButtonLabel" id="autosave" enabled="false"/>
 		<Button text="{i18n>delete}" icon="sap-icon://delete" type="Transparent" press=".delete" ariaLabelledBy="editButtonLabel" id="delete" enabled="false"/>
-		<Button text="Mail" icon="sap-icon://mail" type="Transparent" press=".sendMail" ariaLabelledBy="editButtonLabel" id="sendMail" enabled="true"/>
+		<Button text="{i18n>mail}" icon="sap-icon://email" type="Transparent" press=".sendMail" ariaLabelledBy="editButtonLabel" id="sendMail" enabled="true"/>
 		
-		<Button text="Export as PDF" icon="sap-icon://pdf" type="Transparent" press=".pdf" ariaLabelledBy="editButtonLabel" id="pdf" enabled="true"/>
+		<Button text="{i18n>pdf}" icon="sap-icon://download" type="Transparent" press=".pdf" ariaLabelledBy="editButtonLabel" id="pdf" enabled="true"/>
         </InputListItem>
         </List>
 		<l:VerticalLayout id="idVerticalLayout" class="sapUiContentPadding" width="100%">

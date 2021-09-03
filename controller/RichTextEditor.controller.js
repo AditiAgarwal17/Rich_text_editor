@@ -4,7 +4,7 @@ function (Controller,ResourceModel,MessageToast,MessageBox,aws,read,JSONModel){
 	var oResourceBundle;
 	var tableName;
 	var uuid;
-	var categories=[];
+	var categories=[];//contains the name of all the categories.
 	var cats=[];
 	var categoryVal;
 	var content;
@@ -187,13 +187,6 @@ function (Controller,ResourceModel,MessageToast,MessageBox,aws,read,JSONModel){
 
 		},//to export as PDF
 		pdf:function(){
-			//   var lines = content.split("\n");  
-			//   console.log(lines);
-			//   var pdf_content=[];
-			//   for(var i=0;i<lines.length;i++){
-			// 	  if(i!=0 && i%10==0){
-			// 		  //appending a pagebreak
-			// 	  }}
 				var pdf = new jsPDF('p', 'pt',  'letter');
 				pdf.canvas.height = 72 * 15;
 				pdf.canvas.width = 72 * 13;
@@ -216,7 +209,7 @@ function (Controller,ResourceModel,MessageToast,MessageBox,aws,read,JSONModel){
 					},options);
 					
 
-				pdf.save('test.pdf');
+				pdf.save(categoryVal+'.pdf');
 		},//Deleting an article
 
 		delete:function(){
@@ -244,7 +237,7 @@ function (Controller,ResourceModel,MessageToast,MessageBox,aws,read,JSONModel){
 		},//sending via mail
 		sendMail:function() {
 			var addresses = "";//between the speech mark goes the receptient. Seperate addresses with a ;
-			var body = content.substring(0,100)+"\nTo read more...";//write the message text between the speech marks or put a variable in the place of the speech marks
+			var body = content.substring(0,1000)+"%0D%0A %0D%0A To read more...";//write the message text between the speech marks or put a variable in the place of the speech marks
 			var subject = categoryVal;//between the speech marks goes the subject of the message
 			var href = "mailto:" + addresses + "?"
 					+ "subject=" + subject + "&"
